@@ -1,0 +1,90 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
+import { Check, X } from "lucide-react"
+
+export function SelfQualification() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.2 },
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  const fitCriteria = [
+    "You generate $250K+ annually from your expertise",
+    "You reach 10,000+ people through your platforms",
+    "You have a framework, method, or system people pay for",
+    "You're open to a revenue-share partnership model",
+    "You're AI-forward and ready to build, not looking for quick fixes",
+  ]
+
+  const notFitCriteria = [
+    "You generate less than $250K annually from your expertise",
+    "You reach fewer than 10,000 people through your platforms",
+    "You're not open to a revenue-share partnership model",
+    "You don't have a proven framework or method people pay for",
+    "You need results in 30 days. This takes time to build right",
+  ]
+
+  return (
+    <section ref={sectionRef} className="relative py-32 px-6 bg-card">
+      <div className="max-w-6xl mx-auto space-y-16">
+        {/* Eyebrow */}
+        <p
+          className={`text-xs font-mono tracking-widest text-muted-foreground uppercase transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          Is This For You?
+        </p>
+
+        {/* Grid */}
+        <div
+          className={`grid md:grid-cols-2 gap-12 transition-all duration-1000 delay-200 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {/* Fit Column */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-foreground">{"You're a fit if:"}</h3>
+            <ul className="space-y-4">
+              {fitCriteria.map((item, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <Check className="w-5 h-5 text-primary mt-0.5 shrink-0" />
+                  <span className="text-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Not Fit Column */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-muted-foreground">{"You're probably not a fit if:"}</h3>
+            <ul className="space-y-4">
+              {notFitCriteria.map((item, index) => (
+                <li key={index} className="flex items-start gap-4">
+                  <X className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" />
+                  <span className="text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
