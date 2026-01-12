@@ -80,7 +80,7 @@ export function Process() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden">
+    <section ref={sectionRef} className="relative py-32 px-6 overflow-hidden bg-background">
       {/* Background glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[150px] pointer-events-none transition-all duration-700"
@@ -90,7 +90,7 @@ export function Process() {
       <div className="max-w-6xl mx-auto space-y-16 relative">
         {/* Eyebrow */}
         <p
-          className={`text-xs font-mono tracking-widest text-muted-foreground uppercase transition-all duration-700 ${
+          className={`text-sm font-bold font-mono tracking-widest text-primary uppercase transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >

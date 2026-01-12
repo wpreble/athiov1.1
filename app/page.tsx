@@ -6,17 +6,24 @@ import { Process } from "@/components/process"
 import { SelfQualification } from "@/components/self-qualification"
 import { Closing } from "@/components/closing"
 import { CustomCursor } from "@/components/custom-cursor"
+import { SectionDivider } from "@/components/section-divider"
 
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-background noise-bg overflow-x-hidden">
       <CustomCursor />
       <Hero />
+      <SectionDivider fromDark={true} />
       <HeroStatement />
+      <SectionDivider fromDark={false} />
       <ProductExplainer />
+      <SectionDivider fromDark={true} />
       <ThreePillars />
+      <SectionDivider fromDark={false} />
       <Process />
+      <SectionDivider fromDark={true} variant="curved" />
       <SelfQualification />
+      <SectionDivider fromDark={false} variant="curved" />
       <Closing />
     </main>
   )

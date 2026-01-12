@@ -29,7 +29,7 @@ export function Closing() {
     <section
       ref={sectionRef}
       id="apply"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 py-32"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 py-32 bg-background"
     >
       <div className="max-w-5xl mx-auto text-center space-y-12">
         {/* Scarcity Messaging */}
@@ -38,7 +38,7 @@ export function Closing() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="text-xs font-mono tracking-widest text-muted-foreground uppercase">Limited Partnerships</p>
+          <p className="text-sm font-bold font-mono tracking-widest text-primary uppercase">Limited Partnerships</p>
           <p className="text-lg text-muted-foreground">
             We work with <span className="text-foreground font-medium">7 experts per quarter</span>.
           </p>
@@ -147,13 +147,13 @@ export function Closing() {
       {/* Footer */}
       <div className="absolute bottom-8 left-0 right-0 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-muted-foreground">
-          <p className="font-mono">© 2026 Athio. All rights reserved.</p>
+          <p className="font-mono">© 2025 Athio</p>
           <div className="flex gap-8 font-mono">
-            <a href="mailto:derek@athio.ai" className="hover:text-primary transition-colors">
+            <a href="mailto:derek@athio.ai" className="font-bold text-primary hover:text-primary/80 transition-colors">
               derek@athio.ai
             </a>
-            <a href="/philosophy" className="hover:text-primary transition-colors">
-              Philosophy
+            <a href="/phlsph3" className="hover:text-primary transition-colors">
+              phlsph3
             </a>
           </div>
         </div>

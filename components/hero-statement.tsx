@@ -49,18 +49,18 @@ export function HeroStatement() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative py-24 md:py-32 px-6 overflow-hidden">
+    <section ref={sectionRef} className="relative py-24 md:py-32 px-6 overflow-hidden bg-[#FAFAFA]">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div
-          className="absolute left-[5%] top-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl"
+          className="absolute left-[5%] top-1/4 w-96 h-96 rounded-full bg-primary/10 blur-3xl"
           style={{
             transform: `translateY(${(1 - scrollProgress) * 50}px)`,
             opacity: scrollProgress * 0.4,
           }}
         />
         <div
-          className="absolute right-[5%] bottom-1/4 w-64 h-64 rounded-full bg-primary/10 blur-3xl"
+          className="absolute right-[5%] bottom-1/4 w-64 h-64 rounded-full bg-primary/15 blur-3xl"
           style={{
             transform: `translateY(${(1 - scrollProgress) * -30}px)`,
             opacity: scrollProgress * 0.3,
@@ -81,7 +81,7 @@ export function HeroStatement() {
               }}
             >
               <div className="relative">
-                <div className="w-8 h-8 rounded-full border-2 border-muted-foreground/40 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full border-2 border-[#1A1A1A]/30 flex items-center justify-center">
                   <div
                     className="w-2.5 h-2.5 rounded-full bg-primary transition-transform duration-500"
                     style={{ transform: `scale(${0.8 + scrollProgress * 0.4})` }}
@@ -94,12 +94,12 @@ export function HeroStatement() {
               </div>
             </div>
 
-            {/* Statement text */}
+            {/* Statement text - Dark text for light bg */}
             <div className="space-y-1">
               {segments.map((segment, i) => (
                 <div key={i} className="overflow-hidden">
                   <span
-                    className="block text-2xl md:text-3xl lg:text-4xl italic font-light text-foreground transition-all duration-700 ease-out"
+                    className="block text-2xl md:text-3xl lg:text-4xl italic font-light text-[#1A1A1A] transition-all duration-700 ease-out"
                     style={{
                       opacity: isVisible ? 1 : 0,
                       transform: isVisible ? "translateY(0) rotate(0deg)" : "translateY(100%) rotate(-1deg)",
@@ -142,9 +142,9 @@ export function HeroStatement() {
                 }}
               />
 
-              {/* Frame accents */}
+              {/* Frame accents - Darker for light bg */}
               <div
-                className="absolute -top-4 -left-4 w-16 h-16 border-l-2 border-t-2 border-primary/40 transition-all duration-700"
+                className="absolute -top-4 -left-4 w-16 h-16 border-l-2 border-t-2 border-primary/60 transition-all duration-700"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? "translate(0, 0)" : "translate(-10px, -10px)",
@@ -152,7 +152,7 @@ export function HeroStatement() {
                 }}
               />
               <div
-                className="absolute -bottom-4 -right-4 w-16 h-16 border-r-2 border-b-2 border-primary/40 transition-all duration-700"
+                className="absolute -bottom-4 -right-4 w-16 h-16 border-r-2 border-b-2 border-primary/60 transition-all duration-700"
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? "translate(0, 0)" : "translate(10px, 10px)",
@@ -160,7 +160,7 @@ export function HeroStatement() {
                 }}
               />
 
-              {/* Main image - reverted to static image */}
+              {/* Main image */}
               <div className="relative z-10 overflow-hidden rounded-lg">
                 <Image
                   src="/images/kingwillxm-thinking-man-statue-marble-epic-scuplture-wide-and-l-95238869-df76-4a92-b306-0b0e8b1484a5-20-281-29.jpeg"
@@ -171,7 +171,7 @@ export function HeroStatement() {
                   priority
                 />
                 {/* Subtle overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/40 via-transparent to-transparent" />
               </div>
 
               {/* Floating accent dots */}

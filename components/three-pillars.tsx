@@ -24,7 +24,7 @@ export function ThreePillars() {
             })
           }
         },
-        { threshold: 0.2 }, // 20% visible = fully animate in
+        { threshold: 0.2 },
       )
 
       observer.observe(card)
@@ -80,27 +80,27 @@ export function ThreePillars() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 bg-card overflow-hidden">
+    <section ref={sectionRef} className="relative py-32 px-6 bg-[#FAFAFA] overflow-hidden">
       {/* Animated background grid */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage: `
-            linear-gradient(to right, currentColor 1px, transparent 1px),
-            linear-gradient(to bottom, currentColor 1px, transparent 1px)
+            linear-gradient(to right, #1A1A1A 1px, transparent 1px),
+            linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
         }}
       />
 
       {/* Floating accent orbs */}
-      <div className="absolute top-20 left-[10%] w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-[10%] w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-[10%] w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-[10%] w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Section header */}
         <div className="text-center mb-20">
-          <span className="text-xs font-mono tracking-[0.3em] text-primary uppercase">Why Athio</span>
+          <h2 className="text-sm font-bold tracking-[0.3em] text-primary uppercase">Why Athio</h2>
         </div>
 
         {/* Pillars Grid */}
@@ -125,14 +125,14 @@ export function ThreePillars() {
                   transitionDelay: `${index * 0.1}s`,
                 }}
               >
-                {/* Card */}
+                {/* Card - Using dark card styling for contrast on light bg */}
                 <div
                   className={`
                     relative p-8 rounded-2xl border transition-all duration-500
                     ${
                       isHovered
-                        ? "bg-primary/5 border-primary/30 shadow-[0_0_60px_-15px] shadow-primary/20"
-                        : "bg-card/50 border-border/50 hover:border-border"
+                        ? "bg-[#1A1A1A] border-primary/40 shadow-[0_0_60px_-15px] shadow-primary/30"
+                        : "bg-[#2A2A2A] border-[#3A3A3A] hover:border-[#4A4A4A]"
                     }
                   `}
                 >
@@ -156,7 +156,7 @@ export function ThreePillars() {
                       <span
                         className={`
                           text-4xl font-bold transition-colors duration-500
-                          ${isHovered ? "text-primary" : "text-muted-foreground"}
+                          ${isHovered ? "text-primary" : "text-white/60"}
                         `}
                       >
                         {pillar.number}
@@ -172,12 +172,10 @@ export function ThreePillars() {
                   <h3 className="text-xs font-mono tracking-[0.2em] uppercase mb-4 text-primary">{pillar.title}</h3>
 
                   {/* Headline */}
-                  <h4 className="text-xl lg:text-2xl font-bold text-foreground leading-tight mb-6">
-                    {pillar.headline}
-                  </h4>
+                  <h4 className="text-xl lg:text-2xl font-bold text-white leading-tight mb-6">{pillar.headline}</h4>
 
                   {/* Animated divider */}
-                  <div className="relative h-px bg-border/30 mb-6 overflow-hidden">
+                  <div className="relative h-px bg-white/20 mb-6 overflow-hidden">
                     <div
                       className="absolute inset-y-0 left-0 bg-gradient-to-r from-primary to-primary/50 transition-all duration-700"
                       style={{ width: isHovered ? "100%" : "30%" }}
@@ -199,9 +197,9 @@ export function ThreePillars() {
                             ${isHovered ? "bg-primary scale-100" : "bg-primary/70 scale-90"}
                           `}
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-background" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-white" />
                         </span>
-                        <span className="text-foreground">{bullet}</span>
+                        <span className="text-white/90">{bullet}</span>
                       </li>
                     ))}
                   </ul>
@@ -223,7 +221,7 @@ export function ThreePillars() {
         {/* Bottom connector line */}
         <div className="flex justify-center mt-16">
           <div className="relative">
-            <div className="h-16 w-px bg-gradient-to-b from-border to-transparent" />
+            <div className="h-16 w-px bg-gradient-to-b from-[#3A3A3A] to-transparent" />
             <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary" />
           </div>
         </div>

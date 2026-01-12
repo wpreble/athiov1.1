@@ -41,16 +41,27 @@ export function SelfQualification() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 bg-card">
-      <div className="max-w-6xl mx-auto space-y-16">
-        {/* Eyebrow */}
-        <p
-          className={`text-xs font-mono tracking-widest text-muted-foreground uppercase transition-all duration-1000 ${
+    <section ref={sectionRef} className="relative py-16 md:py-20 px-6 bg-[#FAFAFA]">
+      {/* Subtle grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, #1A1A1A 1px, transparent 1px),
+            linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)
+          `,
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      <div className="max-w-6xl mx-auto space-y-10 relative z-10">
+        <h2
+          className={`text-sm font-bold tracking-widest text-primary uppercase transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
           Is This For You?
-        </p>
+        </h2>
 
         {/* Grid */}
         <div
@@ -60,12 +71,12 @@ export function SelfQualification() {
         >
           {/* Fit Column */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-foreground">{"You're a fit if:"}</h3>
+            <h3 className="text-2xl font-bold text-[#1A1A1A]">{"You're a fit if:"}</h3>
             <ul className="space-y-4">
               {fitCriteria.map((item, index) => (
                 <li key={index} className="flex items-start gap-4">
                   <Check className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <span className="text-foreground">{item}</span>
+                  <span className="text-[#1A1A1A]/80">{item}</span>
                 </li>
               ))}
             </ul>
@@ -73,12 +84,12 @@ export function SelfQualification() {
 
           {/* Not Fit Column */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-muted-foreground">{"You're probably not a fit if:"}</h3>
+            <h3 className="text-2xl font-bold text-[#1A1A1A]/60">{"You're probably not a fit if:"}</h3>
             <ul className="space-y-4">
               {notFitCriteria.map((item, index) => (
                 <li key={index} className="flex items-start gap-4">
-                  <X className="w-5 h-5 text-muted-foreground mt-0.5 shrink-0" />
-                  <span className="text-muted-foreground">{item}</span>
+                  <X className="w-5 h-5 text-[#1A1A1A]/40 mt-0.5 shrink-0" />
+                  <span className="text-[#1A1A1A]/50">{item}</span>
                 </li>
               ))}
             </ul>
