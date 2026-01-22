@@ -51,27 +51,25 @@ export function Header() {
   }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-6 py-6 pointer-events-none">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" ref={logoRef} className="block pointer-events-auto">
-          <div className="relative w-10 h-10">
-            <Image
-              src="/images/athio-logo-white.png"
-              alt="Athio"
-              width={40}
-              height={40}
-              className={`absolute inset-0 transition-opacity duration-300 ${isOnLightSection ? 'opacity-0' : 'opacity-90 hover:opacity-100'}`}
-            />
-            <Image
-              src="/images/athio-logo-black.png"
-              alt="Athio"
-              width={40}
-              height={40}
-              className={`absolute inset-0 transition-opacity duration-300 ${isOnLightSection ? 'opacity-90 hover:opacity-100' : 'opacity-0'}`}
-            />
-          </div>
-        </Link>
-      </div>
+    <header className="fixed top-0 left-0 z-50 px-6 py-6 pointer-events-none">
+      <Link href="/" ref={logoRef} className="block pointer-events-auto">
+        <div className="relative w-10 h-10">
+          <Image
+            src="/images/athio-logo-white.png"
+            alt="Athio"
+            width={40}
+            height={40}
+            className={`absolute inset-0 transition-opacity duration-300 ${isOnLightSection ? 'opacity-0' : 'opacity-90 hover:opacity-100'}`}
+          />
+          <Image
+            src="/images/athio-logo-black.png"
+            alt="Athio"
+            width={40}
+            height={40}
+            className={`absolute inset-0 transition-opacity duration-300 ${isOnLightSection ? 'opacity-90 hover:opacity-100' : 'opacity-0'}`}
+          />
+        </div>
+      </Link>
     </header>
   )
 }
