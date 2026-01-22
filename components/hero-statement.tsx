@@ -49,7 +49,7 @@ export function HeroStatement() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative py-24 md:py-32 px-6 overflow-hidden bg-[#FAFAFA]">
+    <section ref={sectionRef} className="light-section relative py-24 md:py-32 px-6 overflow-hidden bg-[#FAFAFA]">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div

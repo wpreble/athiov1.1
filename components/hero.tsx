@@ -78,7 +78,7 @@ export function Hero() {
           asChild
           className="text-lg px-12 py-8 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide transition-all duration-300 hover:scale-105"
         >
-          <a href="#apply">Apply for Partnership →</a>
+          <a href="https://calendly.com/derek-athio/partnershipcall" target="_blank" rel="noopener noreferrer">Book a Call →</a>
         </Button>
       </div>
 

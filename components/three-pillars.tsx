@@ -80,7 +80,7 @@ export function ThreePillars() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative py-32 px-6 bg-[#FAFAFA] overflow-hidden">
+    <section ref={sectionRef} className="light-section relative py-32 px-6 bg-[#FAFAFA] overflow-hidden">
       {/* Animated background grid */}
       <div
         className="absolute inset-0 opacity-[0.06]"

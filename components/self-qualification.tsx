@@ -41,7 +41,7 @@ export function SelfQualification() {
   ]
 
   return (
-    <section ref={sectionRef} className="relative py-16 md:py-20 px-6 bg-[#FAFAFA]">
+    <section ref={sectionRef} className="light-section relative py-16 md:py-20 px-6 bg-[#FAFAFA]">
       {/* Subtle grid pattern */}
       <div
         className="absolute inset-0 opacity-[0.04]"

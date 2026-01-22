@@ -7,10 +7,12 @@ import { SelfQualification } from "@/components/self-qualification"
 import { Closing } from "@/components/closing"
 import { CustomCursor } from "@/components/custom-cursor"
 import { SectionDivider } from "@/components/section-divider"
+import { Header } from "@/components/header"
 
 export default function Home() {
   return (
     <main className="relative min-h-screen bg-background noise-bg overflow-x-hidden">
+      <Header />
       <CustomCursor />
       <Hero />
       <SectionDivider fromDark={true} />
